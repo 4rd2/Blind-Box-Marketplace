@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import styles from "./Home.module.css";
+import { Navbar1 } from "@/components/Header";
 
 function Home() {
   const router = useRouter();
@@ -18,12 +20,15 @@ function Home() {
   };
 
   return (
-    <div className="Home">
-      <h1>Welcome to the Home Page!</h1>
-      <button onClick={handleMarket}>Market</button>
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleRegister}>Register</button>
+    <div>
+      <Navbar1 />
+      <div className={styles.home}>
+        <h1 className={styles.title}>Welcome to the Home Page!</h1>
+        <button className={styles.btn} onClick={handleLogin}>Login</button>
+        <button className={styles.btn} onClick={handleRegister}>Register</button>
     </div>
+    </div>
+    
   );
 }
 
